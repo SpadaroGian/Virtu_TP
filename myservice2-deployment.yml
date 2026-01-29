@@ -13,7 +13,10 @@ spec:
         app: myservice2
     spec:
       containers:
-        - image: spadarogian/myservice2:1
+        - image: spadarogian/myservice2:2
           imagePullPolicy: IfNotPresent
           name: myservice2
+          env:
+            - name: SERVICE_URL
+              value: http://myservice:8080
       restartPolicy: Always
